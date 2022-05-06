@@ -1,5 +1,11 @@
+import { Logo } from './components/Logo';
+
 import './styles/global.scss';
 
 export function App() {
-  return <h1>Hello, world!</h1>;
+  return (
+    <section className='numberGenerator'>
+      <Logo />
+    </section>
+  );
 }
