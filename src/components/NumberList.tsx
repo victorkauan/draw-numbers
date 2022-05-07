@@ -1,3 +1,5 @@
+import { Number } from './Number';
+
 export function NumberList() {
   let numberList = [];
 
@@ -6,9 +8,7 @@ export function NumberList() {
   return (
     <ul className='number-list'>
       {numberList.map((number) => (
-        <li key={number} className='number'>
-          {number}
-        </li>
+        <Number key={number} value={number} wasDrawn={false} />
       ))}
     </ul>
   );
