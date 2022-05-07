@@ -92,7 +92,7 @@ body {
 
           &:hover {
             cursor: pointer;
-            transform: scale(1.1);
+            transform: scale(1.05);
           }
         }
 
@@ -100,7 +100,10 @@ body {
           border: none;
           background: transparent;
 
+          transition: 0.1s transform;
+
           &:hover {
+            cursor: pointer;
             transform: scale(1.1);
           }
 
