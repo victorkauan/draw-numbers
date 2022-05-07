@@ -4,7 +4,9 @@ export function Logo() {
   return (
     <div className='logo'>
       <img src={CaixaLogo} alt='Logo da Caixa Econômica Federal' />
-      <h1>Mega-Sena</h1>
+      <h1>
+        Mega<span className='orange'>-</span>Sena
+      </h1>
     </div>
   );
 }

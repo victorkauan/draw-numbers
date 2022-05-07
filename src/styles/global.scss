@@ -1,3 +1,4 @@
+$white: #fff;
 $blue: #0471b1;
 $orange: #f48330;
 
@@ -9,16 +10,46 @@ $orange: #f48330;
 
 body {
   font: 400 1rem 'Poppins', sans-serif;
+  text-align: center;
   color: $blue;
 
-  .numberGenerator {
-    padding: 2rem 0;
+  .number-generator {
+    max-width: 20rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+
+    flex-direction: column;
+    gap: 2rem;
 
     &,
-    .logo {
+    .logo,
+    .number,
+    .numbers-drawn,
+    .draw-numbers .buttons {
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .number {
+      color: $orange;
+
+      background: $white;
+      width: 2rem;
+      height: 2rem;
+      border: 2px solid $orange;
+      border-radius: 50%;
+
+      transition: 0.1s transform;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+
+    .orange {
+      color: $orange;
     }
 
     .logo {
@@ -31,6 +62,53 @@ body {
 
       h1 {
         font-size: 1.75rem;
+      }
+    }
+
+    .draw-numbers {
+      .numbers-drawn {
+        margin: 1rem 0 0.875rem;
+        gap: 0.5rem;
+
+        list-style: none;
+      }
+
+      .buttons {
+        gap: 1rem;
+
+        .draw-button {
+          font: 400 1.125rem 'Poppins', sans-serif;
+          text-transform: uppercase;
+
+          width: 7rem;
+          height: 2.5rem;
+
+          border: none;
+          border-radius: 0.25rem;
+          background: $orange;
+          color: $white;
+
+          transition: 0.1s transform;
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+          }
+        }
+
+        .copy-button {
+          border: none;
+          background: transparent;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          .copy-icon {
+            font-size: 2rem;
+            color: $orange;
+          }
+        }
       }
     }
   }
