@@ -41,7 +41,7 @@ body {
       border: 1px solid $orange;
       border-radius: 50%;
 
-      transition: 0.1s transform;
+      transition: transform 0.1s;
 
       &:hover {
         cursor: pointer;
@@ -91,7 +91,7 @@ body {
           background: $orange;
           color: $white;
 
-          transition: 0.1s transform;
+          transition: transform 0.1s;
 
           &:hover {
             cursor: pointer;
@@ -103,7 +103,7 @@ body {
           border: none;
           background: transparent;
 
-          transition: 0.1s transform;
+          transition: transform 0.1s;
 
           &:hover {
             cursor: pointer;
@@ -119,13 +119,69 @@ body {
     }
 
     .number-list {
-      background: rgba($black, 0.1);
+      background: rgba($black, 0.05);
       padding: 0.75rem;
       border-radius: 0.5rem;
 
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 0.375rem;
+    }
+
+    .official-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        'site rules calendar'
+        'results results results';
+      gap: 0.75rem 0;
+
+      .link {
+        font-size: 0.875rem;
+        text-decoration: none;
+        color: $blue;
+
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+
+        &:hover {
+          color: darken($blue, 10);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 2px;
+          background: darken($blue, 10);
+          transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        &:hover::before {
+          left: 0;
+          right: auto;
+          width: 100%;
+        }
+
+        &.official-site {
+          grid-area: site;
+        }
+
+        &.rules {
+          grid-area: rules;
+        }
+
+        &.calendar {
+          grid-area: calendar;
+        }
+
+        &.lastest-results {
+          grid-area: results;
+        }
+      }
     }
   }
 }
